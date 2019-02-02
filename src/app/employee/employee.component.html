@@ -1,0 +1,65 @@
+<div class="container" style="padding-left: 50px;">
+  <h1 >Employee Form</h1>
+  <form #form="ngForm">
+    <div class="form-group">
+      <label>First Name:</label>
+      <input type="text" class="form-control" name="firstname" [(ngModel)]="obj.firstname">
+    </div><br>
+    <div class="form-group">
+      <label>Last Name:</label>
+      <input type="text" class="form-control" name="lastname" style="margin-left:1px;" [(ngModel)]="obj.lastname">
+    </div><br>
+    <div class="form-group">
+      <label>Email:</label>
+      <input type="text" class="form-control" name="email" style="margin-left:31px;" [(ngModel)]="obj.email">
+    </div><br>
+    <div class="form-group">
+      <label>Contact:</label>
+      <input type="text" class="form-control" name="contact" style="margin-left:20px;" [(ngModel)]="obj.contact">
+    </div><br>
+    <div class="form-group">
+      <label>Address:</label>
+      <input type="text" class="form-control" name="address" style="margin-left:17px;" [(ngModel)]="obj.address">
+    </div><br>
+    <div class="form-group">
+      <label>Username:</label>
+      <input type="text" class="form-control" name="username" style="margin-left:4px;" [(ngModel)]="obj.username">
+    </div><br>
+    <div class="form-group">
+      <label>Password:</label>
+      <input type="text" class="form-control" name="password" style="margin-left:6px;" [(ngModel)]="obj.password">
+    </div><br>
+    <div class="form-group">
+      <label>Gender:</label>
+      <input type="radio" class="form-control" name="gender" value="Male"  [(ngModel)]="obj.gender">Male
+      <input type="radio" class="form-control" name="gender" value="Female"  [(ngModel)]="obj.gender">Female
+    </div><br>
+    <div class="form-group">
+      <label>Qualification:</label>
+      <select class="form-control" name="qualification" [(ngModel)]="obj.qualification">
+       <option *ngFor="let qual of qual">
+         {{ qual }}
+        </option>
+      </select>
+    </div><br>
+    <div class="form-group">
+      <label>Experience:</label>
+      <select class="form-control" name="experience" [(ngModel)]="obj.experience">
+          <option *ngFor="let exp of exp">
+             {{ exp }}
+          </option>
+      </select>
+    </div><br>
+    <div class="form-group">
+      <label>Coding Languages:</label>
+      <div *ngFor = "let lang of coding_languages">
+      <input type="checkbox" name="obj.coding_languages"  (change)="check(lang)">
+        {{ lang }}
+      </div><br>
+    </div><br>
+    <button class="btn btn-primary" type="submit" (click)="OnSubmit()">Submit</button>
+  <br>
+{{ obj | json }}
+
+</form>
+</div>

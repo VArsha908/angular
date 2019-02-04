@@ -53,13 +53,15 @@
     <div class="form-group">
       <label>Coding Languages:</label>
       <div *ngFor = "let lang of coding_languages">
-      <input type="checkbox" name="obj.coding_languages"  (change)="check(lang)">
+      <input type="checkbox" name="coding_languages"(change)="check(lang,$event)">
         {{ lang }}
       </div><br>
     </div><br>
     <button class="btn btn-primary" type="submit" (click)="OnSubmit()">Submit</button>
-  <br>
-{{ obj | json }}
+  </form>
+obj={{ obj | json }}
+<br>
 
-</form>
+
+
 </div>
